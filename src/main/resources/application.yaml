@@ -1,0 +1,28 @@
+server:
+  port: 8088
+
+spring:
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:6432/notificator
+    username: postgres
+    password: postgres
+
+  flyway:
+    password: postgres
+    user: postgres
+    url: jdbc:postgresql://localhost:6432/notificator
+
+  mail:
+    host: smtp.yandex.com
+    port: 465
+    username: pochta@pochta.com
+    password: password
+    properties:
+      "mail.transport.protocol": smtps
+      "mail.smtp.auth": true
+      "mail.smtp.starttls.enable": true
+      "mail.smtp.ssl.enable": true
+    protocol: smtps
+
+phone: +79059780217
