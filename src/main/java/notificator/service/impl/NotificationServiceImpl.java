@@ -64,8 +64,8 @@ public class NotificationServiceImpl implements NotificationService {
 
     private Mono<NotificationEntity> sendPush(NotificationEntity notification) {
         return Mono.just(setTargetType(notification, TargetType.PUSH))
-                .map(this::setDelivered)
-                .flatMap(notificationRepository::save);
+                .flatMap(notificationRepository::save)
+                .map(this::setDelivered);
     }
 
     private Mono<NotificationEntity> sendEmail(NotificationEntity notification) {
